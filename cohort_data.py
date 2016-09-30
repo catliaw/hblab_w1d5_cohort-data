@@ -47,7 +47,10 @@ def sort_by_cohort(filename):
 
     """
 
-    all_students = []
+    all_data = open(filename)
+
+    all_students = [student.split('|').[0,2] for student in all_data]
+    #  if student[-1] != "I" or student[-1] != "G"
     winter_16 = []
     spring_16 = []
     summer_16 = []
@@ -58,6 +61,7 @@ def sort_by_cohort(filename):
 
     return all_students
 
+print sort_by_cohort("cohort_data.txt")
 
 def students_by_house(filename):
     """TODO: Sort students by house.
